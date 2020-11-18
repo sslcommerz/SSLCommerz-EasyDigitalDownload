@@ -229,6 +229,8 @@ function listen_for_sslcommerz_response() {
 	{
 		do_action('listen_for_sslcommerz_response');
 	}
+	remove_action( 'edd_after_cc_fields', 'edd_default_cc_address_fields' ); 
+	remove_action( 'edd_cc_form', 'edd_get_cc_form' ); 
 }
 add_action( 'init', 'listen_for_sslcommerz_response' );
 
